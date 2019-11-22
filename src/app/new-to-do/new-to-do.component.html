@@ -1,0 +1,6 @@
+<div class="form-group col-lg-6 card">
+    <form [formGroup]="addToDoForm" class="form" (ngSubmit)="onSubmit()">
+        <input formControlName="text" type="text" class="form-control">
+        <button [disabled]="!addToDoForm.valid" class="btn btn-success">Add To Do</button>
+    </form>
+</div>

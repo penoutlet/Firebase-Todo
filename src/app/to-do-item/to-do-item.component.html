@@ -1,0 +1,24 @@
+<div class="col-lg-4 center">
+    <div class="card" [hidden]="hide">
+        <div class="card-body">
+            <div *ngIf="todo.isComplete" class="alert alert-warning">
+                Completed {{todo.completedAt | date : "medium"}}
+                <div *ngIf="route=='/completedlist'">
+                    <button *ngIf="todo.isComplete" class="btn btn-danger" (click)="delete()">Delete</button>
+
+                </div>
+
+                <div *ngIf="route=='/todolist'">
+                    <button *ngIf="todo.isComplete" class="btn btn-danger" (click)="clear()">Clear</button>
+                </div>
+
+            </div>
+            <p>{{todo.text }}</p>
+            <button *ngIf="!todo.isComplete" class="btn btn-warning" (click)="complete()">Complete</button>
+        </div>
+        <div class="card-footer">
+            Submitted {{todo.submittedAt | date : "medium"}}
+        </div>
+    </div>
+
+</div>
